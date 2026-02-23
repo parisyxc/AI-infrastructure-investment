@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Five Structural Positions | Abundant Intelligence Investment Blueprint</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+  :root {
+    --bg: #0C0C0F;
+    --surface: #141418;
+    --surface-2: #1C1C22;
+    --surface-3: #24242C;
+    --border: #2A2A35;
+    --text: #E8E8ED;
+    --text-2: #9999A8;
+    --text-3: #666677;
+    --accent: #FF3B5C;
+    --accent-glow: rgba(255, 59, 92, 0.15);
+    --green: #00E676;
+    --green-glow: rgba(0, 230, 118, 0.12);
+    --amber: #FFB300;
+    --amber-glow: rgba(255, 179, 0, 0.12);
+    --blue: #448AFF;
+    --blue-glow: rgba(68, 138, 255, 0.12);
+    --purple: #B388FF;
+    --purple-glow: rgba(179, 136, 255, 0.12);
+    --cyan: #18FFFF;
+    --cyan-glow: rgba(24, 255, 255, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(255,59,92,0.3);
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-2);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== MVF SEQUENCE BAR ===== */
+  .mvf-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+  }
+  .mvf-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-2);
+    transition: all 0.3s ease;
+  }
+  .mvf-step.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .mvf-arrow {
+    color: var(--text-3);
+    font-size: 18px;
+  }
+
+  /* ===== OWNER/WORKER LAYER BANNER ===== */
+  .layer-banner {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
+  }
+  .layer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .layer-card {
+    padding: 32px 36px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .layer-card.owner {
+    background: linear-gradient(135deg, rgba(0,230,118,0.06) 0%, var(--surface) 100%);
+    border-left: 3px solid var(--green);
+  }
+  .layer-card.worker {
+    background: linear-gradient(135deg, rgba(255,59,92,0.06) 0%, var(--surface) 100%);
+    border-left: 3px solid var(--accent);
+  }
+  .layer-card:hover { transform: translateY(-2px); }
+  .layer-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .layer-card.owner .layer-label { color: var(--green); }
+  .layer-card.worker .layer-label { color: var(--accent); }
+  .layer-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  .layer-card p {
+    font-size: 14px;
+    color: var(--text-2);
+    line-height: 1.65;
+  }
+  .layer-card .arrow-indicator {
+    font-size: 28px;
+    position: absolute;
+    top: 28px;
+    right: 28px;
+  }
+  .layer-card.owner .arrow-indicator { color: var(--green); }
+  .layer-card.worker .arrow-indicator { color: var(--accent); }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+    text-align: center;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--text-2);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ===== POSITIONS GRID ===== */
+  .positions {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  .pos-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: default;
+    position: relative;
+  }
+  .pos-card:hover {
+    border-color: var(--card-accent, var(--blue));
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px var(--card-accent, var(--blue));
+  }
+  .pos-card:hover .pos-detail { max-height: 500px; opacity: 1; padding: 0 28px 28px; }
+  .pos-card:hover .pos-expand-hint { opacity: 0; }
+
+  .pos-top {
+    padding: 28px 28px 0;
+  }
+  .pos-number {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pos-number span.num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .pos-card[data-color="green"] { --card-accent: var(--green); --card-glow: var(--green-glow); }
+  .pos-card[data-color="blue"] { --card-accent: var(--blue); --card-glow: var(--blue-glow); }
+  .pos-card[data-color="purple"] { --card-accent: var(--purple); --card-glow: var(--purple-glow); }
+  .pos-card[data-color="accent"] { --card-accent: var(--accent); --card-glow: var(--accent-glow); }
+  .pos-card[data-color="amber"] { --card-accent: var(--amber); --card-glow: var(--amber-glow); }
+
+  .pos-number span.num {
+    background: var(--card-glow, var(--blue-glow));
+    color: var(--card-accent, var(--blue));
+    border: 1px solid var(--card-accent, var(--blue));
+  }
+  .pos-number .pos-label-text {
+    color: var(--card-accent, var(--blue));
+  }
+
+  .pos-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .pos-thesis {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.65;
+    padding: 0 28px 20px;
+  }
+
+  /* Conviction + Layer badge row */
+  .pos-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 28px 20px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid;
+  }
+  .badge.owner { color: var(--green); border-color: rgba(0,230,118,0.3); background: var(--green-glow); }
+  .badge.worker { color: var(--accent); border-color: rgba(255,59,92,0.3); background: var(--accent-glow); }
+  .badge.long { color: var(--green); border-color: rgba(0,230,118,0.3); background: var(--green-glow); }
+  .badge.short { color: var(--accent); border-color: rgba(255,59,92,0.3); background: var(--accent-glow); }
+  .badge.hedge { color: var(--amber); border-color: rgba(255,179,0,0.3); background: var(--amber-glow); }
+  .badge.high { color: var(--cyan); border-color: rgba(24,255,255,0.2); background: var(--cyan-glow); }
+  .badge.medium { color: var(--text-2); border-color: var(--border); background: var(--surface-2); }
+
+  .pos-expand-hint {
+    font-size: 11px;
+    color: var(--text-3);
+    text-align: center;
+    padding: 0 28px 16px;
+    transition: opacity 0.3s;
+    letter-spacing: 0.5px;
+  }
+
+  /* Hidden detail that expands on hover */
+  .pos-detail {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 0 28px 0;
+  }
+  .pos-detail-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 20px;
+  }
+  .detail-block {
+    margin-bottom: 18px;
+  }
+  .detail-block h4 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--card-accent, var(--text-3));
+    margin-bottom: 8px;
+  }
+  .detail-block p, .detail-block li {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.65;
+  }
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+  }
+  .detail-block ul li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .detail-block ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--card-accent, var(--text-3));
+    opacity: 0.6;
+  }
+
+  /* ===== SCENARIO TABLE ===== */
+  .scenario-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .scenario-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .scenario-table th {
+    background: var(--surface-2);
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-2);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .scenario-table td {
+    padding: 14px 20px;
+    font-size: 13px;
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    transition: background 0.2s;
+  }
+  .scenario-table tr:last-child td { border-bottom: none; }
+  .scenario-table tr:hover td { background: var(--surface-2); }
+  .scenario-table .pos-name { color: var(--text); font-weight: 600; }
+  .cell-long { color: var(--green) !important; font-weight: 600; }
+  .cell-short { color: var(--accent) !important; font-weight: 600; }
+  .cell-hedge { color: var(--amber) !important; font-weight: 600; }
+
+  /* ===== FRAMEWORK ABSTRACTION ===== */
+  .framework-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .framework-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .framework-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--purple), var(--blue), var(--green));
+  }
+  .framework-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+  .framework-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .fw-step {
+    padding: 24px;
+    background: var(--surface-2);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .fw-step:hover {
+    border-color: var(--card-accent, var(--text-3));
+    transform: translateY(-3px);
+  }
+  .fw-step:nth-child(1) { --card-accent: var(--accent); }
+  .fw-step:nth-child(2) { --card-accent: var(--amber); }
+  .fw-step:nth-child(3) { --card-accent: var(--green); }
+  .fw-step-num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--card-accent);
+    margin-bottom: 10px;
+  }
+  .fw-step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .fw-step p {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  .filter-callout {
+    background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .filter-callout p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .filter-callout strong { color: var(--accent); }
+  .filter-callout em { color: var(--green); font-style: normal; font-weight: 600; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--text-3);
+    line-height: 1.6;
+  }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ===== DIVIDER ===== */
+  .section-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .section-divider hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--accent), var(--border), transparent);
+    margin-bottom: 80px;
+  }
+
+  /* ===== TICKER LAYER ===== */
+  .ticker-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+  }
+  .ticker-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .ticker-btn {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: 'Inter', sans-serif;
+  }
+  .ticker-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .ticker-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .ticker-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .ticker-column {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .ticker-column:hover {
+    border-color: var(--col-accent, var(--border));
+  }
+  .ticker-col-header {
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ticker-col-header .tcol-num {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    background: var(--col-glow, var(--surface-2));
+    color: var(--col-accent, var(--text-2));
+    border: 1px solid var(--col-accent, var(--border));
+    flex-shrink: 0;
+  }
+  .ticker-col-header .tcol-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--col-accent, var(--text-2));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ticker-column[data-pos="1"] { --col-accent: var(--green); --col-glow: var(--green-glow); }
+  .ticker-column[data-pos="2"] { --col-accent: var(--blue); --col-glow: var(--blue-glow); }
+  .ticker-column[data-pos="3"] { --col-accent: var(--purple); --col-glow: var(--purple-glow); }
+  .ticker-column[data-pos="4"] { --col-accent: var(--accent); --col-glow: var(--accent-glow); }
+  .ticker-column[data-pos="5"] { --col-accent: var(--amber); --col-glow: var(--amber-glow); }
+
+  .ticker-list {
+    padding: 8px 0;
+  }
+  .ticker-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .ticker-item:hover {
+    background: var(--surface-2);
+  }
+  .ticker-symbol {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    font-family: 'Inter', monospace;
+  }
+  .ticker-name {
+    font-size: 11px;
+    color: var(--text-3);
+    text-align: right;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ticker-layer-badge {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    flex-shrink: 0;
+  }
+  .ticker-layer-badge.o { background: var(--green-glow); color: var(--green); }
+  .ticker-layer-badge.w { background: var(--accent-glow); color: var(--accent); }
+  .ticker-layer-badge.h { background: var(--amber-glow); color: var(--amber); }
+
+  /* Ticker paste modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    width: 90%;
+    max-width: 640px;
+    position: relative;
+  }
+  .modal-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .modal-box .modal-sub {
+    font-size: 13px;
+    color: var(--text-2);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .modal-box textarea {
+    width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Inter', monospace;
+    font-size: 13px;
+    padding: 16px;
+    resize: vertical;
+    min-height: 200px;
+    line-height: 1.7;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .modal-box textarea:focus { border-color: var(--accent); }
+  .modal-box textarea::placeholder { color: var(--text-3); }
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .modal-actions button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
+  .btn-cancel { background: var(--surface-2); color: var(--text-2); }
+  .btn-cancel:hover { border-color: var(--text-3); color: var(--text); }
+  .btn-apply { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-apply:hover { background: #e0334f; }
+
+  /* ===== PORTFOLIO CALCULATOR ===== */
+  .calc-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .calc-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .calc-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .calc-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    font-size: 14px;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  .calc-input-row {
+    display: flex;
+    gap: 12px;
+    padding: 20px 36px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .calc-input-row input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 160px;
+  }
+  .calc-input-row input:focus { border-color: var(--accent); }
+  .calc-input-row input::placeholder { color: var(--text-3); }
+  .calc-add-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+  }
+  .calc-add-btn:hover { background: #e0334f; }
+
+  /* Factor scoring */
+  .calc-factors {
+    display: none;
+    padding: 24px 36px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .calc-factors.visible { display: block; }
+  .calc-factors-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-2);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .calc-factors-title .scoring-ticker {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .factor-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 60px;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .factor-label {
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 500;
+  }
+  .factor-label .factor-hint {
+    display: block;
+    font-size: 10px;
+    color: var(--text-3);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .factor-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .factor-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-3);
+    transition: all 0.2s;
+  }
+  .factor-dot:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .factor-dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+  .factor-dot.active.owner-score {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .factor-score-display {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-2);
+    text-align: center;
+  }
+  .factor-submit-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* Results table */
+  .calc-results {
+    padding: 0;
+  }
+  .calc-results-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .calc-results-table th {
+    background: var(--surface-3);
+    padding: 14px 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-3);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .calc-results-table td {
+    padding: 14px 20px;
+    font-size: 13px;
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .calc-results-table tr:hover td { background: var(--surface-2); }
+  .calc-results-table tr:last-child td { border-bottom: none; }
+  .calc-results-table .rticker {
+    font-weight: 700;
+    color: var(--text);
+    font-family: 'Inter', monospace;
+  }
+
+  .score-bar-container {
+    width: 100%;
+    height: 8px;
+    background: var(--surface-3);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  .score-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    border: 1px solid;
+  }
+  .score-badge.strong-owner { color: var(--green); border-color: rgba(0,230,118,0.3); background: var(--green-glow); }
+  .score-badge.owner-leaning { color: var(--cyan); border-color: rgba(24,255,255,0.2); background: var(--cyan-glow); }
+  .score-badge.mixed { color: var(--amber); border-color: rgba(255,179,0,0.3); background: var(--amber-glow); }
+  .score-badge.worker-leaning { color: var(--purple); border-color: rgba(179,136,255,0.3); background: var(--purple-glow); }
+  .score-badge.strong-worker { color: var(--accent); border-color: rgba(255,59,92,0.3); background: var(--accent-glow); }
+
+  .calc-empty {
+    padding: 48px 36px;
+    text-align: center;
+    color: var(--text-3);
+    font-size: 14px;
+  }
+
+  /* Portfolio summary bar */
+  .portfolio-summary {
+    display: none;
+    padding: 24px 36px;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface) 100%);
+  }
+  .portfolio-summary.visible { display: block; }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .summary-stat {
+    text-align: center;
+  }
+  .summary-stat .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+  }
+  .summary-stat .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-top: 4px;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    color: var(--text-3);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    line-height: 1;
+  }
+  .remove-btn:hover { color: var(--accent); background: var(--accent-glow); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero { padding: 60px 24px 40px; }
+    .layer-grid { grid-template-columns: 1fr; }
+    .positions { grid-template-columns: 1fr; padding: 0 24px 60px; }
+    .framework-steps { grid-template-columns: 1fr; }
+    .framework-box { padding: 28px; }
+    .layer-banner, .scenario-section, .framework-section, .section-header { padding-left: 24px; padding-right: 24px; }
+    .footer { padding: 28px 24px; }
+    .ticker-grid { grid-template-columns: repeat(2, 1fr); }
+    .ticker-section, .calc-section { padding-left: 24px; padding-right: 24px; }
+    .factor-row { grid-template-columns: 1fr; gap: 8px; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .calc-input-row { flex-direction: column; align-items: stretch; }
+    .calc-input-row input { width: 100%; }
+  }
+  @media (max-width: 520px) {
+    .ticker-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-tag">Momentum &rarr; Verify &rarr; Fundamentals</div>
+  <h1>The Five <em>Structural</em> Positions</h1>
+  <p class="hero-sub">
+    A capital allocation blueprint for the age of Abundant Intelligence.
+    What you own when the intelligence premium unwinds.
+  </p>
+  <div class="mvf-bar">
+    <div class="mvf-step"><span>1</span> Momentum</div>
+    <span class="mvf-arrow">&rarr;</span>
+    <div class="mvf-step"><span>2</span> Verify</div>
+    <span class="mvf-arrow">&rarr;</span>
+    <div class="mvf-step active"><span>3</span> Fundamentals</div>
+  </div>
+</section>
+
+<!-- ===== OWNER / WORKER LAYER ===== -->
+<section class="layer-banner">
+  <div class="layer-grid">
+    <div class="layer-card owner">
+      <div class="arrow-indicator">&uarr;</div>
+      <div class="layer-label">Owner Layer</div>
+      <h3>Gains value when intelligence is abundant</h3>
+      <p>Data, distribution, brand, infrastructure, energy &mdash; assets that compound as the cost of cognition drops to zero. The new scarcity is what intelligence processes, not intelligence itself.</p>
+    </div>
+    <div class="layer-card worker">
+      <div class="arrow-indicator">&darr;</div>
+      <div class="layer-label">Worker Layer</div>
+      <h3>Loses value when intelligence is abundant</h3>
+      <p>Seat-based SaaS, knowledge-work billing, friction intermediaries, human-time taxation &mdash; everything priced on the scarcity of human cognition is repricing downward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FIVE POSITIONS ===== -->
+<section class="section-header">
+  <h2>The Five Positions</h2>
+  <p>Each position survives and compounds across both the bear (displacement spiral) and bull (intelligence boom) scenarios. Hover to reveal the structural logic.</p>
+</section>
+
+<section class="positions">
+
+  <!-- Position 1 -->
+  <div class="pos-card" data-color="green">
+    <div class="pos-top">
+      <div class="pos-number">
+        <span class="num">1</span>
+        <span class="pos-label-text">Position One</span>
+      </div>
+      <h3>Own the Substrate</h3>
+    </div>
+    <p class="pos-thesis">Compute + Energy. When intelligence is abundant, more infrastructure is consumed, not less. Every dollar deployed into AI flows through this layer first.</p>
+    <div class="pos-badges">
+      <span class="badge owner">Owner Layer</span>
+      <span class="badge long">Strong Long</span>
+      <span class="badge high">High Conviction</span>
+    </div>
+    <div class="pos-expand-hint">&darr; Hover for detail</div>
+    <div class="pos-detail">
+      <div class="pos-detail-divider"></div>
+      <div class="detail-block">
+        <h4>Structural Logic</h4>
+        <p>Intelligence abundance requires more compute, not less. Usage scales with capability, not headcount. This is the inverse of the SaaS model. $527B+ consensus capex for 2026 alone.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Exposure Examples</h4>
+        <ul>
+          <li>GPU/chip designers (the "tax collectors")</li>
+          <li>Hyperscaler infrastructure</li>
+          <li>Grid infrastructure + nuclear/generation</li>
+          <li>Data center REITs with power access</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h4>Key Risk</h4>
+        <p>Capex cycle peaks without corresponding monetization. The "build" phase must produce a "harvest" phase by late 2026 or current valuations become unsustainable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position 2 -->
+  <div class="pos-card" data-color="blue">
+    <div class="pos-top">
+      <div class="pos-number">
+        <span class="num">2</span>
+        <span class="pos-label-text">Position Two</span>
+      </div>
+      <h3>Own the Data</h3>
+    </div>
+    <p class="pos-thesis">Proprietary + Irreplicable. When the processing layer commoditizes, the scarce input shifts to what intelligence processes. Data is the new oil well.</p>
+    <div class="pos-badges">
+      <span class="badge owner">Owner Layer</span>
+      <span class="badge long">Strong Long</span>
+      <span class="badge high">High Conviction</span>
+    </div>
+    <div class="pos-expand-hint">&darr; Hover for detail</div>
+    <div class="pos-detail">
+      <div class="pos-detail-divider"></div>
+      <div class="detail-block">
+        <h4>Structural Logic</h4>
+        <p>The company that owns the best training data, the richest behavioral graphs, the deepest domain corpuses &mdash; these are the assets that appreciate as intelligence commoditizes. Most investors are under-allocated here.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Exposure Examples</h4>
+        <ul>
+          <li>Platforms with proprietary behavioral data</li>
+          <li>Financial data monopolies</li>
+          <li>Domain-specific structured datasets</li>
+          <li>Sensor/IoT networks generating unique data</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h4>Key Risk</h4>
+        <p>Open-source data commoditization and synthetic data quality improvements could erode data moats faster than expected.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position 3 -->
+  <div class="pos-card" data-color="purple">
+    <div class="pos-top">
+      <div class="pos-number">
+        <span class="num">3</span>
+        <span class="pos-label-text">Position Three</span>
+      </div>
+      <h3>Own the Distribution</h3>
+    </div>
+    <p class="pos-thesis">Attention + Access. When the cost of producing services drops to zero, being discovered and trusted becomes the bottleneck. Brand is the new moat.</p>
+    <div class="pos-badges">
+      <span class="badge owner">Owner Layer</span>
+      <span class="badge long">Long</span>
+      <span class="badge medium">Med-High Conviction</span>
+    </div>
+    <div class="pos-expand-hint">&darr; Hover for detail</div>
+    <div class="pos-detail">
+      <div class="pos-detail-divider"></div>
+      <div class="detail-block">
+        <h4>Structural Logic</h4>
+        <p>AI agents still route through distribution channels. The interface between autonomous agents and end consumers is the new toll booth. When content production cost is zero, attention and trust are the scarce resources.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Exposure Examples</h4>
+        <ul>
+          <li>Trusted consumer platforms</li>
+          <li>Brands with deep customer relationships</li>
+          <li>Marketplace networks with lock-in</li>
+          <li>Content discovery + recommendation layers</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h4>Key Risk</h4>
+        <p>AI-native disintermediation &mdash; if agents bypass existing distribution entirely and route directly to producers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position 4 -->
+  <div class="pos-card" data-color="accent">
+    <div class="pos-top">
+      <div class="pos-number">
+        <span class="num">4</span>
+        <span class="pos-label-text">Position Four</span>
+      </div>
+      <h3>Short the Intermediary Premium</h3>
+    </div>
+    <p class="pos-thesis">Every business model built on information asymmetry, complexity intermediation, or human-time billing is exposed. The SaaS LBO vintage is the canary.</p>
+    <div class="pos-badges">
+      <span class="badge worker">Worker Layer</span>
+      <span class="badge short">Structural Short</span>
+      <span class="badge high">High Conviction</span>
+    </div>
+    <div class="pos-expand-hint">&darr; Hover for detail</div>
+    <div class="pos-detail">
+      <div class="pos-detail-divider"></div>
+      <div class="detail-block">
+        <h4>Structural Logic</h4>
+        <p>Seat-based SaaS charges per human using the tool. When AI agents replace those humans, the revenue model collapses. $2.5T in private credit AUM carries concentrated exposure to 2021&ndash;23 LBO vintages at peak valuations.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Exposure Examples</h4>
+        <ul>
+          <li>Horizontal SaaS with seat-based pricing</li>
+          <li>Traditional consulting/professional services</li>
+          <li>Friction-dependent financial intermediaries</li>
+          <li>Knowledge-work staffing firms</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h4>Key Risk</h4>
+        <p>Faster-than-expected pivot to usage-based pricing could preserve revenue. Some SaaS companies may become the distribution layer for AI agents rather than being displaced.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position 5 -->
+  <div class="pos-card" data-color="amber">
+    <div class="pos-top">
+      <div class="pos-number">
+        <span class="num">5</span>
+        <span class="pos-label-text">Position Five</span>
+      </div>
+      <h3>Hedge the Transition</h3>
+    </div>
+    <p class="pos-thesis">The fiscal trap: governments tax human time, but productivity gains flow to capital owners. The tax base erodes precisely when transfer needs surge. Position for volatility, not direction.</p>
+    <div class="pos-badges">
+      <span class="badge hedge">Hedged</span>
+      <span class="badge hedge">Volatility Play</span>
+      <span class="badge medium">Medium Conviction</span>
+    </div>
+    <div class="pos-expand-hint">&darr; Hover for detail</div>
+    <div class="pos-detail">
+      <div class="pos-detail-divider"></div>
+      <div class="detail-block">
+        <h4>Structural Logic</h4>
+        <p>Even the bull case acknowledges transition friction. Duration exposure in government bonds becomes a policy bet. Private credit in tech-heavy LBOs carries tail risk in both scenarios. The question is speed and severity, not direction.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Exposure Examples</h4>
+        <ul>
+          <li>Volatility instruments on rates + credit</li>
+          <li>Short duration on sovereign debt</li>
+          <li>Avoid / underweight private credit (tech)</li>
+          <li>Long tail hedges on tech-hub housing</li>
+        </ul>
+      </div>
+      <div class="detail-block">
+        <h4>Key Risk</h4>
+        <p>Fiscal innovation (UBI, compute taxes, AI licensing) absorbs the shock faster than modeled, making hedges expensive and unnecessary.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== SCENARIO VERIFICATION TABLE ===== -->
+<section class="scenario-section">
+  <div class="section-header" style="padding-left:0;padding-right:0;">
+    <h2>Scenario Verification Matrix</h2>
+    <p>Each position stress-tested against both the bear (Citrini displacement spiral) and bull (Bloch intelligence boom) narratives.</p>
+  </div>
+  <table class="scenario-table">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Bear Scenario</th>
+        <th>Bull Scenario</th>
+        <th>Net</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pos-name">1. Compute + Energy</td>
+        <td>Still needed &mdash; AI runs on it</td>
+        <td>Even more needed &mdash; demand explodes</td>
+        <td class="cell-long">STRONG LONG</td>
+      </tr>
+      <tr>
+        <td class="pos-name">2. Proprietary Data</td>
+        <td>Increases in value as moat</td>
+        <td>Critical competitive edge</td>
+        <td class="cell-long">STRONG LONG</td>
+      </tr>
+      <tr>
+        <td class="pos-name">3. Distribution + Brand</td>
+        <td>Survives &mdash; attention is scarce</td>
+        <td>Compounds &mdash; AI amplifies reach</td>
+        <td class="cell-long">LONG</td>
+      </tr>
+      <tr>
+        <td class="pos-name">4. Intermediary SaaS</td>
+        <td>Revenue model collapses</td>
+        <td>Reprices to usage-based</td>
+        <td class="cell-short">STRUCTURAL SHORT</td>
+      </tr>
+      <tr>
+        <td class="pos-name">5. Fiscal + Credit</td>
+        <td>Tax base erodes + credit cascade</td>
+        <td>Concentrated losses, absorbable</td>
+        <td class="cell-hedge">HEDGE / AVOID</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== REPLICABLE FRAMEWORK ===== -->
+<section class="framework-section">
+  <div class="framework-box">
+    <h3>The Replicable Framework</h3>
+    <p style="color: var(--text-2); margin-bottom: 32px; font-size: 15px;">This architecture works for any macro narrative, not just Abundant Intelligence. Run any thesis through these three phases to separate structural positions from narrative trades.</p>
+    <div class="framework-steps">
+      <div class="fw-step">
+        <div class="fw-step-num">Phase 1</div>
+        <h4>Momentum</h4>
+        <p>Where is capital flowing right now? Identify the consensus trade and its gaps. Map price action, flows, and positioning data.</p>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-num">Phase 2</div>
+        <h4>Verify</h4>
+        <p>What breaks the narrative? Run scenario analysis and counter-thesis. Build the verification matrix: what survives both cases.</p>
+      </div>
+      <div class="fw-step">
+        <div class="fw-step-num">Phase 3</div>
+        <h4>Fundamentals</h4>
+        <p>What structural assets compound regardless? Apply the Owner-Layer filter: data, distribution, brand. Size positions across structural vs. tactical.</p>
+      </div>
+    </div>
+    <div class="filter-callout">
+      <p><strong>The Owner-Layer Filter:</strong> For every position, ask &mdash; am I buying a Worker-Layer asset (efficiency, cost savings, labor arbitrage) or an <em>Owner-Layer asset</em> (data accumulation, distribution lock-in, brand compounding)? Worker-Layer assets lose value when intelligence becomes abundant. Owner-Layer assets gain value. <strong>This is the single most important filter for the next decade of capital allocation.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIVIDER ===== -->
+<div class="section-divider"><hr></div>
+
+<!-- ===== TICKER LAYER ===== -->
+<section class="section-header">
+  <h2>Position Ticker Map</h2>
+  <p>Default exposures for each structural position. Paste your own tickers to dynamically update the map.</p>
+</section>
+
+<section class="ticker-section">
+  <div class="ticker-controls">
+    <button class="ticker-btn" onclick="openTickerModal()">Update Tickers</button>
+    <button class="ticker-btn" onclick="resetTickers()">Reset to Defaults</button>
+  </div>
+  <div class="ticker-grid" id="tickerGrid"></div>
+</section>
+
+<!-- Ticker paste modal -->
+<div class="modal-overlay" id="tickerModal">
+  <div class="modal-box">
+    <h3>Update Ticker Map</h3>
+    <p class="modal-sub">
+      Paste tickers grouped by position. Use the position name or number as a header, then list tickers below it (one per line, or comma-separated). Example:
+    </p>
+    <textarea id="tickerInput" placeholder="1. Substrate
+NVDA, TSM, ANET, VST, CEG, EQIX, AMT
+
+2. Data
+SNOW, PLTR, MSCI, VRSK, ICE, GOOG, TTD
+
+3. Distribution
+AMZN, META, SHOP, NFLX, SPOT, UBER, ABNB
+
+4. Short Intermediary
+CRM, ADBE, NOW, WDAY, HUBS, INFY, WIT
+
+5. Hedge Transition
+TLT, HYG, VIX, SHY, GLD, BTC, UUP"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeTickerModal()">Cancel</button>
+      <button class="btn-apply" onclick="applyTickers()">Apply Tickers</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DIVIDER ===== -->
+<div class="section-divider"><hr></div>
+
+<!-- ===== PORTFOLIO OVERLAY CALCULATOR ===== -->
+<section class="section-header">
+  <h2>Portfolio Overlay Calculator</h2>
+  <p>Score your existing holdings against the Owner/Worker filter. Add tickers, rate each on 5 structural factors, and see where your portfolio actually sits.</p>
+</section>
+
+<section class="calc-section">
+  <div class="calc-container">
+    <div class="calc-header">
+      <h3>Owner / Worker Score</h3>
+      <p>Each holding is scored 1&ndash;5 on five factors. A composite score above 3.5 = Owner-Layer asset. Below 2.5 = Worker-Layer exposure. Between = Mixed / Transition.</p>
+    </div>
+
+    <div class="calc-input-row">
+      <input type="text" id="calcTickerInput" placeholder="Ticker (e.g. NVDA)" onkeydown="if(event.key==='Enter')addHolding()">
+      <input type="text" id="calcNameInput" placeholder="Company name (optional)" onkeydown="if(event.key==='Enter')addHolding()">
+      <button class="calc-add-btn" onclick="addHolding()">+ Add Holding</button>
+    </div>
+
+    <!-- Factor scoring panel (shown when scoring a ticker) -->
+    <div class="calc-factors" id="calcFactors">
+      <div class="calc-factors-title">
+        <span>Score 5 Structural Factors</span>
+        <span class="scoring-ticker" id="scoringTickerLabel"></span>
+      </div>
+
+      <div class="factor-row" data-factor="data_moat">
+        <div class="factor-label">Data Moat<span class="factor-hint">Proprietary, irreplicable data assets</span></div>
+        <div class="factor-dots" data-factor="data_moat"></div>
+        <div class="factor-score-display" id="score-data_moat">&mdash;</div>
+      </div>
+
+      <div class="factor-row" data-factor="distribution">
+        <div class="factor-label">Distribution Lock-in<span class="factor-hint">Customer access, brand trust, network effects</span></div>
+        <div class="factor-dots" data-factor="distribution"></div>
+        <div class="factor-score-display" id="score-distribution">&mdash;</div>
+      </div>
+
+      <div class="factor-row" data-factor="infra">
+        <div class="factor-label">Infrastructure Ownership<span class="factor-hint">Physical substrate: compute, energy, hardware</span></div>
+        <div class="factor-dots" data-factor="infra"></div>
+        <div class="factor-score-display" id="score-infra">&mdash;</div>
+      </div>
+
+      <div class="factor-row" data-factor="intelligence_dep">
+        <div class="factor-label">Intelligence Dependency<span class="factor-hint">1 = revenue needs scarce human minds; 5 = benefits from abundant AI</span></div>
+        <div class="factor-dots" data-factor="intelligence_dep"></div>
+        <div class="factor-score-display" id="score-intelligence_dep">&mdash;</div>
+      </div>
+
+      <div class="factor-row" data-factor="pricing_model">
+        <div class="factor-label">Pricing Resilience<span class="factor-hint">1 = seat-based / per-human; 5 = usage/outcome-based</span></div>
+        <div class="factor-dots" data-factor="pricing_model"></div>
+        <div class="factor-score-display" id="score-pricing_model">&mdash;</div>
+      </div>
+
+      <div class="factor-submit-row">
+        <button class="btn-cancel" onclick="cancelScoring()">Cancel</button>
+        <button class="btn-apply" onclick="submitScoring()">Save Score</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="calc-results" id="calcResults">
+      <div class="calc-empty" id="calcEmpty">Add holdings above to begin scoring your portfolio against the Owner/Worker filter.</div>
+      <table class="calc-results-table" id="calcTable" style="display:none;">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Data</th>
+            <th>Distrib.</th>
+            <th>Infra</th>
+            <th>Intel. Dep.</th>
+            <th>Pricing</th>
+            <th>Composite</th>
+            <th>Classification</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="calcTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Portfolio summary -->
+    <div class="portfolio-summary" id="portfolioSummary">
+      <div class="summary-grid">
+        <div class="summary-stat">
+          <div class="stat-value" id="sumTotal" style="color: var(--text);">0</div>
+          <div class="stat-label">Holdings</div>
+        </div>
+        <div class="summary-stat">
+          <div class="stat-value" id="sumAvg" style="color: var(--text);">0.0</div>
+          <div class="stat-label">Avg Score</div>
+        </div>
+        <div class="summary-stat">
+          <div class="stat-value" id="sumOwner" style="color: var(--green);">0</div>
+          <div class="stat-label">Owner Layer</div>
+        </div>
+        <div class="summary-stat">
+          <div class="stat-value" id="sumWorker" style="color: var(--accent);">0</div>
+          <div class="stat-label">Worker Layer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>Blueprint derived from Citrini Research's <a href="https://www.citriniresearch.com/p/2028gic" target="_blank">2028 Global Intelligence Crisis</a> scenario analysis.<br>
+  This is a strategic framework, not financial advice. All scenario data references hypothetical models.</p>
+  <p style="text-align:right;">February 2026<br>Momentum &rarr; Verify &rarr; Fundamentals</p>
+</footer>
+
+<script>
+// ============================================================
+// TICKER MAP ENGINE
+// ============================================================
+const POSITIONS = [
+  { id: 1, name: "Substrate", short: "Compute + Energy", color: "green", layer: "o" },
+  { id: 2, name: "Data", short: "Proprietary Data", color: "blue", layer: "o" },
+  { id: 3, name: "Distribution", short: "Attention + Access", color: "purple", layer: "o" },
+  { id: 4, name: "Short Intermediary", short: "Friction Premium", color: "accent", layer: "w" },
+  { id: 5, name: "Hedge Transition", short: "Fiscal + Credit", color: "amber", layer: "h" },
+];
+
+const DEFAULT_TICKERS = {
+  1: [
+    { sym: "NVDA", name: "NVIDIA" },
+    { sym: "TSM", name: "Taiwan Semi" },
+    { sym: "ANET", name: "Arista Networks" },
+    { sym: "VST", name: "Vistra Energy" },
+    { sym: "CEG", name: "Constellation Energy" },
+    { sym: "EQIX", name: "Equinix" },
+    { sym: "AMT", name: "American Tower" },
+  ],
+  2: [
+    { sym: "SNOW", name: "Snowflake" },
+    { sym: "PLTR", name: "Palantir" },
+    { sym: "MSCI", name: "MSCI Inc" },
+    { sym: "VRSK", name: "Verisk Analytics" },
+    { sym: "ICE", name: "Intercontinental Exch" },
+    { sym: "GOOG", name: "Alphabet" },
+    { sym: "TTD", name: "The Trade Desk" },
+  ],
+  3: [
+    { sym: "AMZN", name: "Amazon" },
+    { sym: "META", name: "Meta Platforms" },
+    { sym: "SHOP", name: "Shopify" },
+    { sym: "NFLX", name: "Netflix" },
+    { sym: "SPOT", name: "Spotify" },
+    { sym: "UBER", name: "Uber" },
+    { sym: "ABNB", name: "Airbnb" },
+  ],
+  4: [
+    { sym: "CRM", name: "Salesforce" },
+    { sym: "ADBE", name: "Adobe" },
+    { sym: "NOW", name: "ServiceNow" },
+    { sym: "WDAY", name: "Workday" },
+    { sym: "HUBS", name: "HubSpot" },
+    { sym: "INFY", name: "Infosys" },
+    { sym: "WIT", name: "Wipro" },
+  ],
+  5: [
+    { sym: "TLT", name: "20+ Yr Treasury" },
+    { sym: "HYG", name: "High Yield Corp" },
+    { sym: "UVXY", name: "VIX Short-Term" },
+    { sym: "SHY", name: "1-3 Yr Treasury" },
+    { sym: "GLD", name: "Gold ETF" },
+    { sym: "DXY", name: "US Dollar Index" },
+    { sym: "TIPS", name: "TIPS Bond ETF" },
+  ],
+};
+
+let currentTickers = JSON.parse(JSON.stringify(DEFAULT_TICKERS));
+
+function renderTickerGrid() {
+  const grid = document.getElementById('tickerGrid');
+  grid.innerHTML = '';
+  POSITIONS.forEach(pos => {
+    const col = document.createElement('div');
+    col.className = 'ticker-column';
+    col.dataset.pos = pos.id;
+    const tickers = currentTickers[pos.id] || [];
+    col.innerHTML = `
+      <div class="ticker-col-header">
+        <span class="tcol-num">${pos.id}</span>
+        <span class="tcol-title">${pos.name}</span>
+      </div>
+      <div class="ticker-list">
+        ${tickers.map(t => `
+          <div class="ticker-item">
+            <span class="ticker-symbol">${t.sym}</span>
+            <span class="ticker-name">${t.name}</span>
+            <span class="ticker-layer-badge ${pos.layer}">${pos.layer === 'o' ? 'OWN' : pos.layer === 'w' ? 'WRK' : 'HDG'}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    grid.appendChild(col);
+  });
+}
+
+function openTickerModal() {
+  document.getElementById('tickerModal').classList.add('visible');
+  // Pre-fill with current tickers
+  let text = '';
+  POSITIONS.forEach(pos => {
+    const tickers = currentTickers[pos.id] || [];
+    text += `${pos.id}. ${pos.name}\n`;
+    text += tickers.map(t => t.sym).join(', ') + '\n\n';
+  });
+  document.getElementById('tickerInput').value = text.trim();
+}
+
+function closeTickerModal() {
+  document.getElementById('tickerModal').classList.remove('visible');
+}
+
+function applyTickers() {
+  const raw = document.getElementById('tickerInput').value;
+  const lines = raw.split('\n');
+  let currentPos = null;
+  const newTickers = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+
+  lines.forEach(line => {
+    line = line.trim();
+    if (!line) return;
+    // Check if it's a position header
+    const headerMatch = line.match(/^(\d)[.\s:)\-]|^(substrate|data|distribution|short|hedge)/i);
+    if (headerMatch) {
+      const num = headerMatch[1] ? parseInt(headerMatch[1]) : null;
+      if (num && num >= 1 && num <= 5) { currentPos = num; return; }
+      const word = (headerMatch[2] || '').toLowerCase();
+      if (word.startsWith('sub')) currentPos = 1;
+      else if (word.startsWith('dat')) currentPos = 2;
+      else if (word.startsWith('dis')) currentPos = 3;
+      else if (word.startsWith('sho')) currentPos = 4;
+      else if (word.startsWith('hed')) currentPos = 5;
+      return;
+    }
+    if (!currentPos) return;
+    // Parse tickers from this line
+    const syms = line.split(/[,\s]+/).filter(s => s.length >= 1 && s.length <= 8 && /^[A-Za-z.]+$/.test(s));
+    syms.forEach(sym => {
+      if (newTickers[currentPos].length < 12) {
+        newTickers[currentPos].push({ sym: sym.toUpperCase(), name: '' });
+      }
+    });
+  });
+
+  // Only apply if we got some tickers
+  const total = Object.values(newTickers).reduce((a, b) => a + b.length, 0);
+  if (total > 0) {
+    currentTickers = newTickers;
+    renderTickerGrid();
+  }
+  closeTickerModal();
+}
+
+function resetTickers() {
+  currentTickers = JSON.parse(JSON.stringify(DEFAULT_TICKERS));
+  renderTickerGrid();
+}
+
+// Close modal on overlay click
+document.getElementById('tickerModal').addEventListener('click', function(e) {
+  if (e.target === this) closeTickerModal();
+});
+
+// Initialize
+renderTickerGrid();
+
+
+// ============================================================
+// PORTFOLIO OVERLAY CALCULATOR
+// ============================================================
+const FACTORS = ['data_moat', 'distribution', 'infra', 'intelligence_dep', 'pricing_model'];
+let holdings = [];
+let scoringIndex = -1;
+let tempScores = {};
+
+function initFactorDots() {
+  document.querySelectorAll('.factor-dots').forEach(container => {
+    const factor = container.dataset.factor;
+    container.innerHTML = '';
+    for (let i = 1; i <= 5; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'factor-dot';
+      dot.textContent = i;
+      dot.dataset.value = i;
+      dot.addEventListener('click', () => selectDot(factor, i));
+      container.appendChild(dot);
+    }
+  });
+}
+
+function selectDot(factor, value) {
+  tempScores[factor] = value;
+  const container = document.querySelector(`.factor-dots[data-factor="${factor}"]`);
+  container.querySelectorAll('.factor-dot').forEach(dot => {
+    const v = parseInt(dot.dataset.value);
+    dot.classList.toggle('active', v <= value);
+    dot.classList.toggle('owner-score', v <= value && value >= 4);
+  });
+  document.getElementById(`score-${factor}`).textContent = `${value}/5`;
+}
+
+function addHolding() {
+  const tickerEl = document.getElementById('calcTickerInput');
+  const nameEl = document.getElementById('calcNameInput');
+  const ticker = tickerEl.value.trim().toUpperCase();
+  if (!ticker) return;
+
+  holdings.push({
+    ticker,
+    name: nameEl.value.trim() || ticker,
+    scores: {},
+    composite: null,
+  });
+
+  tickerEl.value = '';
+  nameEl.value = '';
+
+  // Open scoring for this new holding
+  scoringIndex = holdings.length - 1;
+  openScoring();
+  renderResults();
+}
+
+function openScoring(index) {
+  if (index !== undefined) scoringIndex = index;
+  const h = holdings[scoringIndex];
+  document.getElementById('scoringTickerLabel').textContent = h.ticker;
+  tempScores = { ...h.scores };
+
+  // Reset dots
+  FACTORS.forEach(f => {
+    const container = document.querySelector(`.factor-dots[data-factor="${f}"]`);
+    container.querySelectorAll('.factor-dot').forEach(dot => {
+      dot.classList.remove('active', 'owner-score');
+    });
+    document.getElementById(`score-${f}`).innerHTML = '&mdash;';
+    if (tempScores[f]) selectDot(f, tempScores[f]);
+  });
+
+  document.getElementById('calcFactors').classList.add('visible');
+}
+
+function cancelScoring() {
+  document.getElementById('calcFactors').classList.remove('visible');
+  scoringIndex = -1;
+  tempScores = {};
+  // Remove holding if it has no scores yet
+  if (holdings.length > 0) {
+    const last = holdings[holdings.length - 1];
+    if (Object.keys(last.scores).length === 0) {
+      holdings.pop();
+      renderResults();
+    }
+  }
+}
+
+function submitScoring() {
+  if (scoringIndex < 0) return;
+  const allScored = FACTORS.every(f => tempScores[f] !== undefined);
+  if (!allScored) {
+    // Highlight missing
+    FACTORS.forEach(f => {
+      if (!tempScores[f]) {
+        document.getElementById(`score-${f}`).textContent = '!';
+        document.getElementById(`score-${f}`).style.color = 'var(--accent)';
+        setTimeout(() => {
+          document.getElementById(`score-${f}`).style.color = '';
+          document.getElementById(`score-${f}`).innerHTML = '&mdash;';
+        }, 1500);
+      }
+    });
+    return;
+  }
+
+  holdings[scoringIndex].scores = { ...tempScores };
+  const vals = FACTORS.map(f => tempScores[f]);
+  holdings[scoringIndex].composite = (vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1);
+
+  document.getElementById('calcFactors').classList.remove('visible');
+  scoringIndex = -1;
+  tempScores = {};
+  renderResults();
+}
+
+function removeHolding(index) {
+  holdings.splice(index, 1);
+  if (scoringIndex === index) {
+    document.getElementById('calcFactors').classList.remove('visible');
+    scoringIndex = -1;
+  }
+  renderResults();
+}
+
+function classifyScore(score) {
+  const s = parseFloat(score);
+  if (s >= 4.0) return { label: 'Strong Owner', cls: 'strong-owner' };
+  if (s >= 3.5) return { label: 'Owner-Leaning', cls: 'owner-leaning' };
+  if (s >= 2.5) return { label: 'Mixed', cls: 'mixed' };
+  if (s >= 2.0) return { label: 'Worker-Leaning', cls: 'worker-leaning' };
+  return { label: 'Strong Worker', cls: 'strong-worker' };
+}
+
+function getBarColor(score) {
+  const s = parseFloat(score);
+  if (s >= 4.0) return 'var(--green)';
+  if (s >= 3.5) return 'var(--cyan)';
+  if (s >= 2.5) return 'var(--amber)';
+  if (s >= 2.0) return 'var(--purple)';
+  return 'var(--accent)';
+}
+
+function renderResults() {
+  const empty = document.getElementById('calcEmpty');
+  const table = document.getElementById('calcTable');
+  const body = document.getElementById('calcTableBody');
+  const summary = document.getElementById('portfolioSummary');
+
+  const scored = holdings.filter(h => h.composite !== null);
+
+  if (holdings.length === 0) {
+    empty.style.display = 'block';
+    table.style.display = 'none';
+    summary.classList.remove('visible');
+    return;
+  }
+
+  empty.style.display = 'none';
+  table.style.display = 'table';
+
+  body.innerHTML = holdings.map((h, i) => {
+    if (h.composite === null) {
+      return `<tr>
+        <td class="rticker">${h.ticker}</td>
+        <td>${h.name}</td>
+        <td colspan="5" style="text-align:center;"><button class="ticker-btn" onclick="openScoring(${i})" style="font-size:11px;padding:5px 14px;">Score Now</button></td>
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+        <td><button class="remove-btn" onclick="removeHolding(${i})">&times;</button></td>
+      </tr>`;
+    }
+    const cls = classifyScore(h.composite);
+    const barColor = getBarColor(h.composite);
+    const pct = (parseFloat(h.composite) / 5 * 100).toFixed(0);
+    return `<tr>
+      <td class="rticker" style="cursor:pointer;" onclick="openScoring(${i})">${h.ticker}</td>
+      <td>${h.name}</td>
+      <td>${h.scores.data_moat || '&mdash;'}</td>
+      <td>${h.scores.distribution || '&mdash;'}</td>
+      <td>${h.scores.infra || '&mdash;'}</td>
+      <td>${h.scores.intelligence_dep || '&mdash;'}</td>
+      <td>${h.scores.pricing_model || '&mdash;'}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-weight:700;color:var(--text);min-width:28px;">${h.composite}</span>
+          <div class="score-bar-container">
+            <div class="score-bar-fill" style="width:${pct}%;background:${barColor};"></div>
+          </div>
+        </div>
+      </td>
+      <td><span class="score-badge ${cls.cls}">${cls.label}</span></td>
+      <td><button class="remove-btn" onclick="removeHolding(${i})">&times;</button></td>
+    </tr>`;
+  }).join('');
+
+  // Summary
+  if (scored.length > 0) {
+    summary.classList.add('visible');
+    const avg = (scored.reduce((a, h) => a + parseFloat(h.composite), 0) / scored.length).toFixed(1);
+    const owners = scored.filter(h => parseFloat(h.composite) >= 3.5).length;
+    const workers = scored.filter(h => parseFloat(h.composite) < 2.5).length;
+    document.getElementById('sumTotal').textContent = holdings.length;
+    document.getElementById('sumAvg').textContent = avg;
+    document.getElementById('sumAvg').style.color = getBarColor(avg);
+    document.getElementById('sumOwner').textContent = owners;
+    document.getElementById('sumWorker').textContent = workers;
+  } else {
+    summary.classList.remove('visible');
+  }
+}
+
+// Initialize
+initFactorDots();
+</script>
+
+</body>
+</html>
